@@ -122,15 +122,15 @@ public class IntArrayWorker
           }
           return count;
       }
-  public int getLargest(int n)
+  public int getLargest()
       {
-          int largest = 0;
+          int largest = matrix[0][0];
           for(int[]row : matrix)
           {
               for(int pixel : row)
               {
-                  if (pixel == n)
-                  largest ++;
+                  if (largest < pixel)
+                  largest = pixel;
               }
           }
           return largest;
@@ -140,11 +140,7 @@ public class IntArrayWorker
           int coltal = 0;
           for(int[]row : matrix)
           {
-              for(int pixel:row)
-              {
-                  if(pixel == n)
-                  coltal ++;
-              }
+              coltal += row[n];
           }
           return coltal;
       }
