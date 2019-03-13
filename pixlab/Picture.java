@@ -177,9 +177,9 @@ public class Picture extends SimplePicture
     {
       for(int col = 0; col< width; col++)
       {
-        botPixel = pixels[width - row - 1][col];
-        topPixel = pixels[row][col];
-        topPixel.setColor(botPixel.getColor());
+        topPixel = pixels[[col];
+        botPixel = pixels[pixels.length - 1 - row]][col];
+        botPixel.setColor(topPixel.getColor());
       }
     }
   }
@@ -201,9 +201,11 @@ public class Picture extends SimplePicture
    
   }
   
-  /*public void mirrorDiaonal()
+  public void mirrorDiagonal()
   {
     Pixel[][] pixels = this.getPixels2D();
+    Pixel orig = null;
+    Pixel img = null;
     int end = Math.min (pixels.length, pixels[0].length);
     for(int i =0; i<end; i++)
     {
@@ -214,7 +216,7 @@ public class Picture extends SimplePicture
             img.setPixel(orig.setPixel);
         }
     }
-  }*/
+  }
   
   /** Mirror just part of a picture of a temple */
   public void mirrorTemple()
