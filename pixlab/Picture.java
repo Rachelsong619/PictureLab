@@ -110,10 +110,6 @@ public class Picture extends SimplePicture
           }
       }
   } //End zeroRed()
-  public void testZeroBlue()
-  {
-      
-  }
   public void testKeepOnlyBlue()
   {
       Picture beach = new Picture ("beach.jpg");
@@ -161,26 +157,13 @@ public class Picture extends SimplePicture
         p.setRed(average);
         p.setBlue(average);
         p.setGreen(average);
-  }
-  
-    
-  /*public void FixUnderwater()
-  {
-      Pixel[][]image = this.getPixels2D();
-      for (Pixel[] row: image)
-      {
-          for(Pixel p: row)
-          {
-               p.getRed();
-          }
-      }
-  }*/
-      
-  
+      }  
+     }
+    }
   /** Method that mirrors the picture around a 
     * vertical mirror in the center of the picture
     * from left to right */
-  public void mirrorVertical()
+   public void mirrorVertical()
   {
     Pixel[][] pixels = this.getPixels2D();
     Pixel leftPixel = null;
@@ -207,8 +190,8 @@ public class Picture extends SimplePicture
     {
       for(int col = 0; col< width; col++)
       {
-        topPixel = pixels[[col];
-        botPixel = pixels[pixels.length - 1 - row]][col];
+        topPixel = pixels[row][col];
+        botPixel = pixels[pixels.length - 1 - row][col];
         botPixel.setColor(topPixel.getColor());
       }
     }
@@ -243,10 +226,12 @@ public class Picture extends SimplePicture
         {
             orig = pixels[i][j];
             img = pixels[j][i];
-            img.setPixel(orig.setPixel);
+            img.setColor(orig.getColor());
         }
     }
   }
+  
+ 
   
   /** Mirror just part of a picture of a temple */
   public void mirrorTemple()
@@ -270,6 +255,13 @@ public class Picture extends SimplePicture
         rightPixel.setColor(leftPixel.getColor());
       }
     }
+  }
+  
+  public void mirrorArms()
+  {
+      Pixel topPixel = null;
+      Pixel botPixel = null;
+      Pixel[][] pixels = this.getPixels2D();
   }
   
   /** copy from the passed fromPic to the
@@ -314,8 +306,8 @@ public class Picture extends SimplePicture
     Picture flowerNoBlue = new Picture(flower2);
     flowerNoBlue.zeroBlue();
     this.copy(flowerNoBlue,300,0);
-    this.copy(flower1,400,0);
-    this.copy(flower2,500,0);
+    this.copy(flower1,400,100);
+    this.copy(flower2,500,120);
     this.mirrorVertical();
     this.write("collage.jpg");
   }
