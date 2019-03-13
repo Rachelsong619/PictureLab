@@ -110,11 +110,26 @@ public class Picture extends SimplePicture
           }
       }
   } //End zeroRed()
-  public void testKeepOnlyBlue()
+  
+  public void KeepOnlyRed()
   {
       Picture beach = new Picture ("beach.jpg");
       beach.zeroBlue();
       beach.zeroGreen();
+  }
+  
+  public void KeepOnlyBlue()
+  {
+      Picture beach = new Picture ("beach.jpg");
+      beach.zeroRed();
+      beach.zeroGreen();
+  }
+  
+  public void KeepOnlyGreen()
+  {
+      Picture beach = new Picture ("beach.jpg");
+      beach.zeroBlue();
+      beach.zeroRed();
   }
   
   public void zeroGreen()
