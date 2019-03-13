@@ -49,6 +49,24 @@ public class PictureTester
     caterpillar.mirrorDiagnoal();
     caterpillar.explore();
   }
+  
+  public static void testNegate()
+  {
+     Picture temple = new Picture("temple.jpg");
+    temple.explore();
+    temple.negate();
+    temple.explore();
+  }
+  
+  public static void testGrayScale()
+  {
+     Picture temple = new Picture("temple.jpg");
+    temple.explore();
+    temple.grayScale();
+    temple.explore();
+  }
+    
+    
   /** Method to test mirrorTemple */
   public static void testMirrorTemple()
   {
