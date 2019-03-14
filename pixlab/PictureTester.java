@@ -30,7 +30,13 @@ public class PictureTester
     beach.keepOnlyGreen();
     beach.explore();
   }
-  
+  public static void testCopy()
+  {
+      Picture ocean = new Picture("beach.jpg");
+      Picture daddy = new Picture("flower1.jpg");
+      ocean.copy(daddy, 50, 300);
+      ocean.explore();
+  }
   /** Method to test mirrorVertical */
   public static void testMirrorVertical()
   {
@@ -90,6 +96,21 @@ public class PictureTester
     temple.explore();
   }
   
+  public static void testMirrorArms()
+  {
+      Picture snowman = new Picture("snowman.jpg");
+      snowman.explore();
+      snowman.mirrorArms();
+      snowman.explore();
+  }
+  
+  public static void testMirrorGull()
+  {
+      Picture seagull = new Picture("seagull.jpg");
+      seagull.explore();
+      seagull.mirrorGull();
+      seagull.explore();
+  }
   /** Method to test the collage method */
   public static void testCollage()
   {
@@ -125,7 +146,7 @@ public class PictureTester
     //testMirrorHorizontalBotToTop();
     //testMirrorTemple();
     //testMirrorArms();
-    //testMirrorGull();
+    testMirrorGull();
     //testMirrorDiagonal();
     //testCollage();
     //testCopy();
