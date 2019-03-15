@@ -390,9 +390,24 @@ public class Picture extends SimplePicture
       Pixel leftPixel = null;
       Pixel rightPixel = null;
       Pixel[][] pixels = this.getPixels2D();
-      
-  }
-  
+      for(int row = 240; row< 324; row++)
+      {
+          for(int col =445 ; col<509; col++)
+          {
+             leftPixel = pixels[row][col];
+             rightPixel = pixels[row][509 - col +509];
+             rightPixel.setColor(leftPixel.getColor());
+          }
+      }
+      for(Pixel[] row: image)
+        {
+          for(Pixel p:row)
+          {
+              int green = pixels.getGreen();
+              pixels.setGreen(0);
+          }
+        }
+    }
   
   /** Method to show large changes in color 
     * @param edgeDist the distance for finding edges
